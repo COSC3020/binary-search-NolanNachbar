@@ -4,11 +4,14 @@ function binarySearch(list, element) {
     
     while (left <= right) {
         // Calculate middle index
-        const middle = Math.floor((left + right) / 2); 
+        let middle = Math.floor((left + right) / 2); 
 
-        // Compare middle element with the target element 
+        // Compare middle element with the target element. I also added the while loop to give the index of the first appearance of the target element
         if (list[middle] === element) {
-            return middle; 
+            while(list[middle] === element){
+                middle--;
+            }
+            return middle + 1; 
         } else if (list[middle] < element) {
             left = middle + 1; 
         } else {
