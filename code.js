@@ -3,9 +3,10 @@ function binarySearch(list, element) {
     let right = list.length - 1; 
     
     while (left <= right) {
-        // Find the middle of the interval
+        // Calculate middle index
         const middle = Math.floor((left + right) / 2); 
 
+        // Compare middle element with the target element 
         if (list[middle] === element) {
             return middle; 
         } else if (list[middle] < element) {
