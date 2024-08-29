@@ -1,17 +1,19 @@
-function binarySearch(list, target) {
-    let l = 0; // Left bound
-    let r = list.length - 1; // Right bound
+function binarySearch(list, element) {
+    let left = 0;
+    let right = list.length - 1; 
+    
+    while (left <= right) {
+        // Calculate middle index
+        const middle = Math.floor((left + right) / 2); 
 
-    while (l <= r) {
-        var m = Math.floor((l + r) / 2); // The middle of the bounds
-
-        if (list[m] === target) {
-            return m;
-        } else if (list[m] < target) {
-            l = m + 1;
+        // Compare middle element with the target element 
+        if (list[middle] === element) {
+            return middle; 
+        } else if (list[middle] < element) {
+            left = middle + 1; 
         } else {
-            r = m - 1;
+            right = middle -1; 
         }
     }
-    return -1
+    return -1;
 }
