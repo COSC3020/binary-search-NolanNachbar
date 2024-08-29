@@ -1,14 +1,13 @@
 function binarySearch(list, element) {
-    //defining the bounds
     let left = 0;
     let right = list.length - 1; 
-    
+
     while (left <= right) {
-        // The middle of the bounds
+        // Find the middle of the bounds
         const middle = Math.floor((left + right) / 2); 
 
         if (list[middle] === element) {
-            return middle;
+            return middle; 
         } else if (list[middle] < element) {
             left = middle + 1; 
         } else {
