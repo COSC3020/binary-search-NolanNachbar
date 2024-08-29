@@ -1,16 +1,18 @@
 function binarySearch(list, element) {
-    let l = 0; // Left bound
-    let r = list.length - 1; // Right bound
+    //defining the bounds
+    let left = 0;
+    let right = list.length - 1; 
     
-    while (l <= r) {
-        const middle = Math.floor((l + r) / 2); // The middle of the bounds
+    while (left <= right) {
+        // The middle of the bounds
+        const middle = Math.floor((left + right) / 2); 
 
-        if (list[m] === element) {
-            return m; 
-        } else if (list[m] < element) {
-            l = m + 1; 
+        if (list[middle] === element) {
+            return middle;
+        } else if (list[middle] < element) {
+            left = middle + 1; 
         } else {
-            r = m -1; 
+            right = middle -1; 
         }
     }
     return -1;
